@@ -1,8 +1,6 @@
 import React from "react";
 import DogImage from "./Component/DogImage";
 import { dogAction } from "./actions/dogAction";
-import { connect } from "react-redux";
-
 import "./App.css";
 
 function App(props) {
@@ -15,10 +13,4 @@ function App(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    message: state.message,
-  };
-};
-
-export default connect(mapStateToProps, { dogAction })(App);
+export default App;

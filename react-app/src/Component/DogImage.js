@@ -2,6 +2,8 @@ import { fetchDogSuccess } from "../actions/dogAction";
 import React, { useEffect } from "react";
 import { dogAction } from "../actions/dogAction";
 
+import { connect } from "react-redux";
+
 import { Card, CardHeader, CardImg, Col } from "reactstrap";
 
 function DogImage(props) {
@@ -19,4 +21,10 @@ function DogImage(props) {
     </Col>
   );
 }
-export default DogImage;
+const mapStateToProps = (state) => {
+  return {
+    message: state.message,
+  };
+};
+
+export default connect(mapStateToProps, { dogAction })(DogImage);
