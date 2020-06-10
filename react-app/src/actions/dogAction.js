@@ -12,7 +12,7 @@ export const dogAction = () => {
       .then((res) => {
         console.log(res.data);
 
-        dispatch({ type: FETCH_DOG_SUCCESS, payload: res.data });
+        dispatch({ type: FETCH_DOG_SUCCESS, payload: res.data.message });
       })
       .catch((err) => {
         dispatch({
