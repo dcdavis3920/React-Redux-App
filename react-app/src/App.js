@@ -6,10 +6,11 @@ import { connect } from "react-redux";
 import "./App.css";
 
 function App(props) {
+  console.log(props.dogAction);
+  console.log(props.message);
   return (
     <div className="App">
-      <DogImage message={props.message} />
-      <button onClick={props.dogAction}>Featch Dog</button>
+      <DogImage message={props.message} dog={dogAction} />
     </div>
   );
 }
@@ -20,7 +21,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(null, { dogAction })(App);
-// finish wiring mapStateToProps
-// add button onClick
-// map thru props
+export default connect(mapStateToProps, { dogAction })(App);

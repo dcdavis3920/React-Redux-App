@@ -34,5 +34,3 @@ export const mainReducer = (state = initialState, action) => {
       return state;
   }
 };
-// chage cases in reducer to match imports
-//
